@@ -41,15 +41,14 @@
     <a href="/~thecrpe7/" class="logo mr-auto"><img src="wp-content/uploads/2020/06/logo.jpg" alt="" class="img-fluid"></a>
 
     <nav class="nav-menu d-none d-lg-block">
-      <ul>
-        <li class="active"><a href="/~thecrpe7/">Home</a></li>
-        <li><a href="/~thecrpe7/services">Services</a></li>
-        <li><a href="/~thecrpe7/projects">Projects</a></li>
-        <li><a href="/~thecrpe7/team">Team</a></li>
-        <li><a href="/~thecrpe7/contact">Contact</a></li>
-        <li><a href="#">Careers</a></li>
-
-      </ul>
+    <?php wp_nav_menu (
+      array(
+        'container'=> false, 
+        'menu_class'=> false,
+        'theme_location' => 'top-menu',
+      )
+      );?>
+      
     </nav><!-- .nav-menu -->
   </div>
 </header><!-- End Header -->
