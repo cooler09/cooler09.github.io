@@ -57,8 +57,14 @@
   </section><!-- End Hero -->
   <section id="featured-services" class="featured-services section-bg">
       <div class="container">
-
         <div class="row no-gutters">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><img alt="Land Development" style="width: 60px;" src="wp-content/uploads/2020/06/land-dev-icon.svg"></div>
+              <h4 class="title"><a href="">Land Development</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trade stravi</p>
+            </div>
+          </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><img alt="Telecom" style="width: 60px;" src="wp-content/uploads/2020/06/telecom-icon.svg"></div>
@@ -71,13 +77,6 @@
               <div class="icon"><img alt="Survey" style="width: 60px;" src="wp-content/uploads/2020/06/survey-icon.svg"></div>
               <h4 class="title"><a href="">Survey</a></h4>
               <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><img alt="Land Development" style="width: 60px;" src="wp-content/uploads/2020/06/land-dev-icon.svg"></div>
-              <h4 class="title"><a href="">Land Development</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trade stravi</p>
             </div>
           </div>
         </div>
@@ -100,7 +99,7 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>THE CROSSROADS GROUP, LLC</h3>
             <p>
-              THE CROSSROADS GROUP, LLC (TCG), is a full-service civil engineering and land
+              <strong>THE CROSSROADS GROUP, LLC (TCG)</strong>, is a full-service civil engineering and land
 surveying firm headquartered in Hamburg, Pennsylvania. The Crossroads Group, LLC has
 performed civil engineering and land surveying throughout the Commonwealth of
 Pennsylvania, as well as project evaluations and designs in New York, Maryland, Delaware
@@ -172,6 +171,111 @@ management excellence.
 
       </div>
     </section><!-- End Why Us Section -->
+    <div id="cta" class="cta">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <h3>Join the Team!</h3>
+            <p>The Crossroads Group strives to hire the best talent. If you'd like to become part of the team apply to any of our job listings so we can set up a meeting.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="/~thecrpe7/careers/">Careers</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Headquarters:</h4>
+                <p>769 State St<br>Hamburg, PA 19526</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>484-660-3055</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-fax"></i>
+                <h4>Fax:</h4>
+                <p>484-660-3742</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.225788627718!2d-75.97765904874156!3d40.55869087924743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c4221499ea5647%3A0x6f4b49982424d71!2sThe%20Crossroads%20Group%2C%20LLC!5e0!3m2!1sen!2sus!4v1590844158795!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
+              
+            </div>
+
+          </div>
+          
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Paxinos:</h4>
+                <p>1174 SR 487<br>Paxinos, PA 17860</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>570.672.2317</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-fax"></i>
+                <h4>Fax:</h4>
+                <p>484-660-3742</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6036.249766584885!2d-76.58698137514406!3d40.84718187793101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b0bd2eb31e775c1!2sThe%20Crossroads%20Group%2C%20LLC!5e0!3m2!1sen!2sus!4v1591621114461!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
+              
+            </div>
+
+          </div>
+          
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Pittsburgh:</h4>
+                <p>3625 Washington Pike<br>Bridgeville, PA 15017</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>412-500-9650</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-fax"></i>
+                <h4>Fax:</h4>
+                <p>484-660-3742</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.877666522679!2d-80.14101814874773!3d40.32287247927502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88345659a2346ecf%3A0x7ed5091c81cbf48e!2s3625%20Washington%20Pike%2C%20Bridgeville%2C%20PA%2015017!5e0!3m2!1sen!2sus!4v1591621258317!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
+              
+            </div>
+
+          </div>
+
+          
+
+        </div>
+
+      </div>
+    </section>
 
 
 <?php get_footer();?>
