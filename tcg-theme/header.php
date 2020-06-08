@@ -33,12 +33,12 @@
 </div>
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top">
+<header id="header" class="fixed-top shadow">
   <div class="container d-flex align-items-center">
 
     <!-- <h1 class="logo mr-auto"><a href="/~thecrpe7/">The Crossroads Group, LLC</a></h1> -->
     <!-- Uncomment below if you prefer to use an image logo -->
-    <a href="/~thecrpe7/" class="logo mr-auto"><img src="wp-content/uploads/2020/06/logo.jpg" alt="" class="img-fluid"></a>
+    <a href="/~thecrpe7/" class="logo mr-auto"><img src="/~thecrpe7/wp-content/uploads/2020/06/crg_logo.png" alt="" class="img-fluid"></a>
 
     <nav class="nav-menu d-none d-lg-block">
     <?php wp_nav_menu (
