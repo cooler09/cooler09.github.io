@@ -9,10 +9,10 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(wp-content/uploads/2020/06/slide-1.jpg)">
+        <div class="carousel-item active" style="background-image: url(wp-content/uploads/2020/06/slide_1.webp)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Green</span></h2>
+              <h2 class="animate__animated animate__fadeInDown">Welcome to The Crossroads Group</h2>
               <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
@@ -20,7 +20,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide-2.jpg)">
+        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_2.webp)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide-3.jpg)">
+        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_3.webp)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
@@ -61,21 +61,21 @@
         <div class="row no-gutters">
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><img style="width: 60px;" src="wp-content/uploads/2020/06/telecom-icon.svg"></div>
+              <div class="icon"><img alt="Telecom" style="width: 60px;" src="wp-content/uploads/2020/06/telecom-icon.svg"></div>
               <h4 class="title"><a href="">Telecom</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><img style="width: 60px;" src="wp-content/uploads/2020/06/survey-icon.svg"></div>
+              <div class="icon"><img alt="Survey" style="width: 60px;" src="wp-content/uploads/2020/06/survey-icon.svg"></div>
               <h4 class="title"><a href="">Survey</a></h4>
               <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><img style="width: 60px;" src="wp-content/uploads/2020/06/land-dev-icon.svg"></div>
+              <div class="icon"><img alt="Land Development" style="width: 60px;" src="wp-content/uploads/2020/06/land-dev-icon.svg"></div>
               <h4 class="title"><a href="">Land Development</a></h4>
               <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trade stravi</p>
             </div>
@@ -118,7 +118,7 @@ management excellence.
     </section><!-- End About Us Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <section id="why-us" class="why-us  section-bg">
       <div class="container">
         <div class="row">
           <div class="col-12 p-3 text-center">
