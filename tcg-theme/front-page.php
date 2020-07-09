@@ -62,21 +62,21 @@
             <div class="icon-box">
               <div class="icon d-sm-flex justify-content-sm-center"><img alt="Land Development" style="height: 60px;" src="wp-content/uploads/2020/06/map-icon.svg"></div>
               <h4 class="title"><a href="">Land Development</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trade stravi</p>
+              <p class="description">Civil engineering services including stormwater management, NPDES, grading, and construction design for commercial Land Development and Residential Subdivision clients.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon d-sm-flex justify-content-sm-center"><img alt="Telecom" style="height: 60px;" src="wp-content/uploads/2020/06/telecom-icon.svg"></div>
               <h4 class="title"><a href="">Telecom</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <p class="description">Services include A/E drawings, Construction Management, Land Development, and Professional Land Survey for towers, small cells, and utilities.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon d-sm-flex justify-content-sm-center"><img alt="Survey" style="height: 60px;" src="wp-content/uploads/2020/06/survey-icon.svg"></div>
               <h4 class="title"><a href="">Survey</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <p class="description">Topographic and boundary land surveying services, as well as flood surveys, construction stakeout, ALTA/ACSM survey plans, permitting, and title review.</p>
             </div>
           </div>
         </div>
