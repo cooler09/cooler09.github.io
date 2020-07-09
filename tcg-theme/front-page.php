@@ -60,21 +60,21 @@
         <div class="row no-gutters">
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><img alt="Land Development" style="width: 60px;" src="wp-content/uploads/2020/06/land-dev-icon.svg"></div>
+              <div class="icon d-sm-flex justify-content-sm-center"><img alt="Land Development" style="height: 60px;" src="wp-content/uploads/2020/06/map-icon.svg"></div>
               <h4 class="title"><a href="">Land Development</a></h4>
               <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trade stravi</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><img alt="Telecom" style="width: 60px;" src="wp-content/uploads/2020/06/telecom-icon.svg"></div>
+              <div class="icon d-sm-flex justify-content-sm-center"><img alt="Telecom" style="height: 60px;" src="wp-content/uploads/2020/06/telecom-icon.svg"></div>
               <h4 class="title"><a href="">Telecom</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><img alt="Survey" style="width: 60px;" src="wp-content/uploads/2020/06/survey-icon.svg"></div>
+              <div class="icon d-sm-flex justify-content-sm-center"><img alt="Survey" style="height: 60px;" src="wp-content/uploads/2020/06/survey-icon.svg"></div>
               <h4 class="title"><a href="">Survey</a></h4>
               <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
             </div>
