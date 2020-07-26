@@ -38,7 +38,7 @@
 
     <!-- <h1 class="logo mr-auto"><a href="/~thecrpe7/">The Crossroads Group, LLC</a></h1> -->
     <!-- Uncomment below if you prefer to use an image logo -->
-    <a href="/~thecrpe7/" class="logo mr-auto"><img src="/~thecrpe7/wp-content/uploads/2020/06/crg_logo.png" alt="" class="img-fluid"></a>
+    <a href="/~thecrpe7/" class="logo mr-auto"><img src="/~thecrpe7/wp-content/uploads/2020/07/crg_logo.png" alt="" class="img-fluid"></a>
 
     <nav class="nav-menu d-none d-lg-block">
     <?php wp_nav_menu (
