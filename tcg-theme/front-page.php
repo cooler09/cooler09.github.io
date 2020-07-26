@@ -94,7 +94,11 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2">
-            <img src="wp-content/uploads/2020/06/about.jpg" class="img-fluid" alt="">
+            <div class="owl-carousel about-us-carousel">
+              <img src="/~thecrpe7/wp-content/uploads/2020/07/20200715_082745.webp" class="img-fluid" alt="Headquarters Team">
+              <img src="/~thecrpe7/wp-content/uploads/2020/07/Hamburg-team.webp" class="img-fluid" alt="Paxinos Team">
+              <img src="/~thecrpe7/wp-content/uploads/2020/07/Pitt_Office.webp" class="img-fluid" alt="Pittsburgh Team">
+            </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>THE CROSSROADS GROUP, LLC</h3>
