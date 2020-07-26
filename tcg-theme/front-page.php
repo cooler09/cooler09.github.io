@@ -13,7 +13,7 @@
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Welcome to The Crossroads Group</h2>
-              <p class="animate__animated animate__fadeInUp">We are a full-service civil engineering, land surveying, and A&E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
+              <p class="animate__animated animate__fadeInUp">We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
@@ -99,7 +99,7 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>THE CROSSROADS GROUP, LLC</h3>
             <p>
-              <strong>THE CROSSROADS GROUP, LLC (TCG)</strong> is a full-service civil engineering, land surveying, and A&E telecommunications firm. Our clientele ranges from single-family homeowners in need of grading and building permits, to nationally recognized telecommunication and energy companies in need of site surveying, design, and permits. While our clients and their respective needs may vary, our high level of service does not. Every project is treated with the utmost level of excellence in terms of both engineering and project management.  In an ever-changing climate of design approval and permitting processes, TCG maintains continued education about municipal planning code, state regulation standards, and engineering methodology. Additionally, TCG has continued to expand its expertise into adjacent states, while still maintaining our core clientele throughout the Commonwealth of Pennsylvania. 
+              <strong>THE CROSSROADS GROUP, LLC (TCG)</strong> is a full-service civil engineering, land surveying, and A/E telecommunications firm. Our clientele ranges from single-family homeowners in need of grading and building permits, to nationally recognized telecommunication and energy companies in need of site surveying, design, and permits. While our clients and their respective needs may vary, our high level of service does not. Every project is treated with the utmost level of excellence in terms of both engineering and project management.  In an ever-changing climate of design approval and permitting processes, TCG maintains continued education about municipal planning code, state regulation standards, and engineering methodology. Additionally, TCG has continued to expand its expertise into adjacent states, while still maintaining our core clientele throughout the Commonwealth of Pennsylvania.
             </p>
             
           </div>
