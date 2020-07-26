@@ -189,6 +189,7 @@
     autoplay: false,
     dots: true,
     loop: true,
+    autoHeight: true,
     responsive: {
       0: {
         items: 2,
@@ -228,6 +229,7 @@
     autoplay: false,
     dots: true,
     loop: true,
+    autoHeight: true,
     items: 1,
   });
 })(jQuery);
