@@ -23,8 +23,8 @@
         <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_2.webp)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <h2 class="animate__animated animate__fadeInDown">Welcome to The Crossroads Group</h2>
+              <p class="animate__animated animate__fadeInUp">We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
@@ -34,8 +34,8 @@
         <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_3.webp)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <h2 class="animate__animated animate__fadeInDown">Welcome to The Crossroads Group</h2>
+              <p class="animate__animated animate__fadeInUp">We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
@@ -260,7 +260,7 @@
                 <h4>Fax:</h4>
                 <p>484-660-3742</p>
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.877666522679!2d-80.14101814874773!3d40.32287247927502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88345659a2346ecf%3A0x7ed5091c81cbf48e!2s3625%20Washington%20Pike%2C%20Bridgeville%2C%20PA%2015017!5e0!3m2!1sen!2sus!4v1591621258317!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1520.9388328524815!2d-80.13959791637154!3d40.322872497422004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834571eb4c0a70f%3A0x801a0f490b9c6bff!2sThe%20Crossroads%20Group%2C%20LLC!5e0!3m2!1sen!2sus!4v1596502494883!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
               
             </div>
 
