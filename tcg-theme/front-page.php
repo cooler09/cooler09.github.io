@@ -12,9 +12,9 @@
         <div class="carousel-item active" style="background-image: url(wp-content/uploads/2020/06/slide_1.webp)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to The Crossroads Group</h2>
-              <p class="animate__animated animate__fadeInUp">We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <h2>Welcome to The Crossroads Group</h2>
+              <p>We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
+              <a href="#about" class="btn-get-started scrollto">Read More</a>
             </div>
           </div>
         </div>
@@ -23,9 +23,9 @@
         <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_2.webp)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to The Crossroads Group</h2>
-              <p class="animate__animated animate__fadeInUp">We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <h2>Welcome to The Crossroads Group</h2>
+              <p>We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
+              <a href="#about" class="btn-get-started scrollto">Read More</a>
             </div>
           </div>
         </div>
