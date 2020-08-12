@@ -34,9 +34,9 @@
         <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_3.webp)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to The Crossroads Group</h2>
-              <p class="animate__animated animate__fadeInUp">We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <h2>Welcome to The Crossroads Group</h2>
+              <p>We are a full-service civil engineering, land surveying, and A/E telecommunications firm headquartered in Hamburg, Pennsylvania providing service throughout the Commonwealth of Pennsylvania, as well as Connecticut, Delaware, Kentucky, Maryland, Maine, North Carolina, New Hampshire, New York, Ohio, and West Virginia.</p>
+              <a href="#about" class="btn-get-started scrollto">Read More</a>
             </div>
           </div>
         </div>
@@ -96,8 +96,8 @@
           <div class="col-lg-6 order-1 order-lg-2">
             <div class="owl-carousel about-us-carousel">
               <img src="/~thecrpe7/wp-content/uploads/2020/07/20200715_082745.webp" class="img-fluid" alt="Headquarters Team">
-              <img src="/~thecrpe7/wp-content/uploads/2020/07/Hamburg-team.webp" class="img-fluid" alt="Paxinos Team">
-              <img src="/~thecrpe7/wp-content/uploads/2020/07/Pitt_Office.webp" class="img-fluid" alt="Pittsburgh Team">
+              <img src="/~thecrpe7/wp-content/uploads/2020/08/hamburg_team.webp" class="img-fluid" alt="Paxinos Team">
+              <img src="/~thecrpe7/wp-content/uploads/2020/08/Pitts_Office.webp" class="img-fluid" alt="Pittsburgh Team">
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -260,7 +260,7 @@
                 <h4>Fax:</h4>
                 <p>484-660-3742</p>
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1520.9388328524815!2d-80.13959791637154!3d40.322872497422004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834571eb4c0a70f%3A0x801a0f490b9c6bff!2sThe%20Crossroads%20Group%2C%20LLC!5e0!3m2!1sen!2sus!4v1596502494883!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6083.7553762382995!2d-80.14101268244177!3d40.322872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x801a0f490b9c6bff!2sThe%20Crossroads%20Group%2C%20LLC!5e0!3m2!1sen!2sus!4v1596741286723!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
               
             </div>
 
