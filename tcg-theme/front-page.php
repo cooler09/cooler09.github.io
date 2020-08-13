@@ -9,7 +9,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(wp-content/uploads/2020/06/slide_1.webp)">
+        <div class="carousel-item active" style="background-image: url(wp-content/uploads/2020/08/slide_1.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2>Welcome to The Crossroads Group</h2>
@@ -20,7 +20,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_2.webp)">
+        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/08/slide_2.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2>Welcome to The Crossroads Group</h2>
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/06/slide_3.webp)">
+        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/08/slide_3.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2>Welcome to The Crossroads Group</h2>
@@ -95,9 +95,9 @@
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2">
             <div class="owl-carousel about-us-carousel">
-              <img src="/wp-content/uploads/2020/07/20200715_082745.webp" class="img-fluid" alt="Headquarters Team">
-              <img src="/wp-content/uploads/2020/08/hamburg_team.webp" class="img-fluid" alt="Paxinos Team">
-              <img src="/wp-content/uploads/2020/08/Pitts_Office.webp" class="img-fluid" alt="Pittsburgh Team">
+              <img src="/wp-content/uploads/2020/08/20200715_082745.jpg" class="img-fluid" alt="Headquarters Team">
+              <img src="/wp-content/uploads/2020/08/hamburg_team.jpg" class="img-fluid" alt="Paxinos Team">
+              <img src="/wp-content/uploads/2020/08/Pitts_Office.jpg" class="img-fluid" alt="Pittsburgh Team">
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
