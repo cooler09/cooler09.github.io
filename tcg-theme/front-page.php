@@ -95,9 +95,9 @@
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2">
             <div class="owl-carousel about-us-carousel">
-              <img src="/~thecrpe7/wp-content/uploads/2020/07/20200715_082745.webp" class="img-fluid" alt="Headquarters Team">
-              <img src="/~thecrpe7/wp-content/uploads/2020/08/hamburg_team.webp" class="img-fluid" alt="Paxinos Team">
-              <img src="/~thecrpe7/wp-content/uploads/2020/08/Pitts_Office.webp" class="img-fluid" alt="Pittsburgh Team">
+              <img src="/wp-content/uploads/2020/07/20200715_082745.webp" class="img-fluid" alt="Headquarters Team">
+              <img src="/wp-content/uploads/2020/08/hamburg_team.webp" class="img-fluid" alt="Paxinos Team">
+              <img src="/wp-content/uploads/2020/08/Pitts_Office.webp" class="img-fluid" alt="Pittsburgh Team">
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -176,7 +176,7 @@
             <p>The Crossroads Group strives to hire the best talent. If you'd like to become part of the team apply to any of our job listings so we can set up a meeting.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="/~thecrpe7/careers/">Careers</a>
+            <a class="cta-btn align-middle" href="/careers/">Careers</a>
           </div>
         </div>
 
