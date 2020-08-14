@@ -117,9 +117,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 p-3 text-center">
-            <p>TCG recognizes and addresses the various needs of our clients and the community. It is
-              this flexibility; coupled with our attention to each client’s individual needs that distinguishes
-              us from other engineering and land surveying firms. Our diverse client base includes:</p>
+            <p>TCG recognizes and addresses the various needs of our clients and the community. It is this flexibility, coupled with our attention to each client’s individual needs, that distinguishes us from other engineering and land surveying firms. Our diverse client base includes:</p>
           </div>
         </div>
         <div class="row no-gutters">
