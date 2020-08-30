@@ -31,7 +31,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/08/slide_3.jpg)">
+        <div class="carousel-item" style="background-image: url(wp-content/uploads/2020/08/slide_002.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2>Welcome to The Crossroads Group</h2>
