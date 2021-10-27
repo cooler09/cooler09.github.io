@@ -1044,6 +1044,7 @@ section {
 }
 
 .portfolio .portfolio-wrap {
+  pointer-events: none;
   transition: 0.3s;
   position: relative;
   overflow: hidden;
@@ -1052,6 +1053,7 @@ section {
 }
 
 .portfolio .portfolio-wrap::before {
+  pointer-events: none;
   content: "";
   background: rgba(34, 34, 34, 0.6);
   position: absolute;
@@ -1069,6 +1071,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
+  pointer-events: none;
   opacity: 0;
   position: absolute;
   top: 0;
