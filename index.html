@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Zachary Lockhart — Full-Stack Web Developer</title>
+  <meta name="description" content="Zachary Lockhart is a full-stack web developer building clean, reliable, and accessible web applications with modern JavaScript, Node.js, and thoughtful UI." />
+  <link rel="canonical" href="https://cooler09.github.io" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+  <!-- theme-color adapts to each scheme; the runtime toggle updates it via JS -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zachary Lockhart — Full-Stack Web Developer" />
+  <meta property="og:description" content="Full-stack web developer building clean, reliable, and accessible web applications with modern JavaScript and Node.js." />
+  <meta property="og:url" content="https://cooler09.github.io" />
+  <meta property="og:site_name" content="Zachary Lockhart" />
+  <!-- TODO: add a real 1200x630 social image and update this URL -->
+  <meta property="og:image" content="https://cooler09.github.io/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zachary Lockhart — Full-Stack Web Developer" />
+  <meta name="twitter:description" content="Full-stack web developer building clean, reliable, and accessible web applications." />
+  <meta name="twitter:image" content="https://cooler09.github.io/assets/og-image.png" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!--
+    Set the theme BEFORE first paint to avoid a flash of the wrong theme.
+    Priority: saved preference -> OS preference -> light.
+  -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Zachary Lockhart — home">
+        <span class="brand-mark" aria-hidden="true">ZL</span>
+        <span class="brand-name">Zachary Lockhart</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open navigation menu"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch to dark theme"
+        aria-pressed="false"
+      >
+        <!-- sun icon (shown in dark theme, i.e. "switch to light") -->
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <!-- moon icon (shown in light theme, i.e. "switch to dark") -->
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <p class="eyebrow">Hi, I'm Zachary</p>
+        <h1 class="hero-title" id="hero-heading">
+          <span class="hero-name">Zachary Lockhart</span>
+          <span class="hero-role">Full-Stack Web Developer</span>
+        </h1>
+        <p class="hero-tagline">
+          <!-- TODO: replace with your own one-line tagline -->
+          {{YOUR_TAGLINE}} — building fast, accessible web apps from the database to the browser.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://github.com/cooler09" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
+            </svg>
+            GitHub
+          </a>
+          <a class="btn btn-outline" href="mailto:zacharyjordan82@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+              <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Email
+          </a>
+          <!-- TODO: replace {{RESUME_URL}} with a link to your resume (PDF) -->
+          <a class="btn btn-outline" href="{{RESUME_URL}}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M14 3v5h5M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <p class="section-kicker">01 — About</p>
+        <h2 class="section-title" id="about-heading">A bit about me</h2>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              <!-- TODO: replace with your own bio -->
+              {{YOUR_BIO}} I'm a full-stack web developer who cares about clean code, thoughtful UX,
+              and shipping software that holds up in production. I work comfortably across the stack —
+              designing APIs, modeling data, and building accessible, responsive interfaces.
+            </p>
+            <p>
+              This site itself is hand-built with vanilla HTML, CSS, and JavaScript — no frameworks
+              and no build step. I'm currently
+              <!-- TODO: personalize -->
+              {{YOUR_AVAILABILITY}} and looking to join a strong engineering team.
+            </p>
+          </div>
+
+          <ul class="about-facts" aria-label="Quick facts">
+            <li class="card fact">
+              <span class="fact-label">Role</span>
+              <span class="fact-value">Full-Stack Web Developer</span>
+            </li>
+            <li class="card fact">
+              <span class="fact-label">Location</span>
+              <!-- TODO: replace with your location -->
+              <span class="fact-value">{{YOUR_LOCATION}}</span>
+            </li>
+            <li class="card fact">
+              <span class="fact-label">Focus</span>
+              <span class="fact-value">Web apps · APIs · UI</span>
+            </li>
+            <li class="card fact">
+              <span class="fact-label">Status</span>
+              <!-- TODO: e.g. "Open to opportunities" -->
+              <span class="fact-value">{{YOUR_AVAILABILITY}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <p class="section-kicker">02 — Skills</p>
+        <h2 class="section-title" id="skills-heading">Tech stack</h2>
+        <p class="section-lead">
+          A snapshot of the tools I reach for. Edit these lists to match your real strengths.
+        </p>
+
+        <div class="skills-grid">
+          <article class="card skill-card">
+            <h3 class="skill-heading">Frontend</h3>
+            <ul class="chip-list" aria-label="Frontend skills">
+              <li class="chip">HTML5</li>
+              <li class="chip">CSS3</li>
+              <li class="chip">JavaScript (ES2015+)</li>
+              <li class="chip">TypeScript</li>
+              <li class="chip">React</li>
+              <li class="chip">Accessibility</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <h3 class="skill-heading">Backend</h3>
+            <ul class="chip-list" aria-label="Backend skills">
+              <li class="chip">Node.js</li>
+              <li class="chip">Express</li>
+              <li class="chip">REST APIs</li>
+              <li class="chip">PostgreSQL</li>
+              <li class="chip">MongoDB</li>
+              <li class="chip">Authentication</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <h3 class="skill-heading">Tooling</h3>
+            <ul class="chip-list" aria-label="Tooling skills">
+              <li class="chip">Git &amp; GitHub</li>
+              <li class="chip">Vite</li>
+              <li class="chip">Docker</li>
+              <li class="chip">Jest</li>
+              <li class="chip">CI/CD</li>
+              <li class="chip">Linux / shell</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-head-row">
+          <div>
+            <p class="section-kicker">03 — Projects</p>
+            <h2 class="section-title" id="projects-heading">Selected work</h2>
+          </div>
+          <a class="link-more" href="https://github.com/cooler09?tab=repositories" target="_blank" rel="noopener noreferrer">
+            See more on GitHub
+            <svg class="icon icon-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Cards are rendered by main.js from assets/data/projects.json -->
+        <div class="projects-grid" id="projects-grid" aria-live="polite" aria-busy="true">
+          <p class="projects-status" id="projects-status">Loading projects&hellip;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <p class="section-kicker">04 — Contact</p>
+        <h2 class="section-title" id="contact-heading">Let's build something</h2>
+        <p class="section-lead">
+          Have a role, a project, or a question? The fastest way to reach me is email — I read everything.
+        </p>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:zacharyjordan82@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+              <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            zacharyjordan82@gmail.com
+          </a>
+          <a class="btn btn-outline" href="https://github.com/cooler09" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
+            </svg>
+            github.com/cooler09
+          </a>
+          <!-- TODO: replace {{LINKEDIN_URL}} with your LinkedIn profile URL -->
+          <a class="btn btn-outline" href="{{LINKEDIN_URL}}" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; <span id="year">2026</span> Zachary Lockhart</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="https://github.com/cooler09" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:zacharyjordan82@gmail.com">Email</a>
+        <a href="#top">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>

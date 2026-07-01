@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Sample Project — Task Manager",
+    "description": "A full-stack task management app with authentication, real-time updates, and a REST API. Replace this card with a real project of yours.",
+    "tags": ["React", "Node.js", "PostgreSQL", "REST API"],
+    "repoUrl": "https://github.com/cooler09",
+    "liveUrl": "https://example.com"
+  },
+  {
+    "name": "Sample Project — Weather Dashboard",
+    "description": "A responsive dashboard that consumes a third-party weather API, with charts and saved locations. Swap in your own details, tags, and links.",
+    "tags": ["TypeScript", "Vite", "Chart.js"],
+    "repoUrl": "https://github.com/cooler09",
+    "liveUrl": null
+  },
+  {
+    "name": "Sample Project — Markdown Notes API",
+    "description": "A backend service for storing and rendering markdown notes, with tests and CI. This card has no live demo, so the live link is hidden automatically.",
+    "tags": ["Express", "Jest", "Docker"],
+    "repoUrl": "https://github.com/cooler09",
+    "liveUrl": null
+  }
+]
