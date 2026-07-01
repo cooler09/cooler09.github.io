@@ -1,21 +1,22 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ---------------------------------------------------------------------------
+/* ===========================================================================
    Material 3 (Material You) theming.
 
    Semantic Material role tokens are declared in @theme and point at CSS
-   variables. Those variables hold the LIGHT palette on :root and are flipped
-   to the DARK palette under `.dark`. This makes Tailwind utilities such as
-   bg-surface, text-on-surface, bg-primary-container, border-outline, rounded-xl
-   and shadow-e2 fully theme-responsive.
+   variables. Those variables carry the LIGHT palette on :root and are flipped
+   to the DARK palette under `.dark`, so every Tailwind utility built on a role
+   (bg-surface, text-on-surface, bg-primary, border-outline, rounded-xl,
+   shadow-e1, …) becomes theme-responsive automatically. Palette values come
+   from the professional blue seed and are AA-aware in both themes.
 
-   Palette: professional blue seed (AA-aware in both themes).
-   Direction: "mat-tonal" — tonal container surfaces for hero/section accents,
-   elevated cards with real shadow, visible Material color.
-   --------------------------------------------------------------------------- */
+   Direction: clean & minimal, senior full-stack. Outlined cards are the calm
+   default; tonal container surfaces bookend the page (hero + contact); primary
+   is used sparingly (eyebrows, primary CTA, focus ring, accents).
+   =========================================================================== */
 @theme {
-  /* --- Material color roles → CSS variables ------------------------------ */
+  /* --- Material color roles → CSS variables (flipped under .dark) --------- */
   --color-primary: var(--md-primary);
   --color-on-primary: var(--md-on-primary);
   --color-primary-container: var(--md-primary-container);
@@ -48,7 +49,7 @@
   --color-error: var(--md-error);
   --color-on-error: var(--md-on-error);
 
-  /* --- MD3 shape scale --------------------------------------------------- */
+  /* --- MD3 shape scale (corner radii) ------------------------------------ */
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -61,18 +62,18 @@
   --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
     monospace;
 
-  /* --- MD3 elevation (tonal shadow) ------------------------------------- */
+  /* Fluid display size for the hero headline. */
+  --text-display: clamp(2.5rem, 6vw, 4rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+
+  /* --- MD3 elevation (tonal shadows) ------------------------------------- */
   --shadow-e1: 0 1px 2px 0 rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15);
   --shadow-e2: 0 1px 2px 0 rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15);
   --shadow-e3: 0 4px 8px 3px rgb(0 0 0 / 0.15), 0 1px 3px 0 rgb(0 0 0 / 0.3);
-
-  /* --- Fluid display type for the hero ---------------------------------- */
-  --text-display: clamp(2.5rem, 6vw, 4.25rem);
-  --text-display--line-height: 1.05;
-  --text-display--letter-spacing: -0.02em;
 }
 
-/* --- LIGHT palette --------------------------------------------------------- */
+/* --- LIGHT palette (default) ---------------------------------------------- */
 :root {
   --md-primary: #415f91;
   --md-on-primary: #ffffff;
@@ -105,9 +106,11 @@
 
   --md-error: #ba1a1a;
   --md-on-error: #ffffff;
+
+  color-scheme: light;
 }
 
-/* --- DARK palette ---------------------------------------------------------- */
+/* --- DARK palette --------------------------------------------------------- */
 .dark {
   --md-primary: #aac7ff;
   --md-on-primary: #0a305f;
@@ -140,11 +143,13 @@
 
   --md-error: #ffb4ab;
   --md-on-error: #690005;
+
+  color-scheme: dark;
 }
 
-/* ---------------------------------------------------------------------------
+/* ===========================================================================
    Base layer
-   --------------------------------------------------------------------------- */
+   =========================================================================== */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -154,21 +159,12 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-on-background);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Always-visible, high-contrast focus ring for keyboard users. */
-  :focus-visible {
-    outline: 3px solid var(--color-primary);
-    outline-offset: 2px;
-    border-radius: var(--radius-xs);
-  }
-
-  /* Honor reduced-motion preferences. */
+  /* Honor users who prefer reduced motion. */
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -184,177 +180,157 @@
   }
 }
 
-/* ---------------------------------------------------------------------------
-   Material 3 component layer.
+/* ===========================================================================
+   Utilities layer — global keyboard focus indicator.
 
-   Buttons carry a subtle state layer — an on-color overlay via a ::before
-   pseudo-element that fades to ~8% on hover and ~12% on active/press, matching
-   MD3 interaction states. Cards use MD3 elevation; chips follow the assist /
-   input chip shape.
-   --------------------------------------------------------------------------- */
+   Declared in @layer utilities (NOT base) so it is never overridden by a
+   Tailwind utility such as `outline-none`, which also compiles into the
+   utilities layer. This guarantees a visible MD3 focus ring for keyboard
+   users on every interactive control, in both themes (WCAG 2.4.7).
+   =========================================================================== */
+@layer utilities {
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+}
+
+/* ===========================================================================
+   Component layer — Material 3 components built by hand with Tailwind.
+
+   Every interactive surface carries a state layer: an on-color overlay at
+   ~8% (hover) / ~12% (pressed), implemented as a ::before pseudo-element,
+   per the Material 3 interaction-state spec.
+   =========================================================================== */
 @layer components {
-  /* ---- Buttons -------------------------------------------------------- */
+  /* --- Shared state layer ------------------------------------------------- */
 
-  /* Shared button geometry + MD3 state-layer scaffold. All variants share
-     this base; the state layer is an on-color overlay (currentColor) that
-     fades to ~8% on hover and ~12% on press. */
+  /*
+    Reusable MD3 interaction state layer. Any element with `.md-state` gets an
+    on-color overlay via a ::before pseudo-element — ~8% on hover, ~12% on
+    press. Applied in markup (nav links) alongside the element's own classes.
+  */
+  .md-state {
+    @apply relative isolate overflow-hidden;
+  }
+  .md-state::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 -z-10 rounded-[inherit]
+      bg-current opacity-0 transition-opacity duration-150;
+  }
+  .md-state:hover::before {
+    @apply opacity-[0.08];
+  }
+  .md-state:active::before {
+    @apply opacity-[0.12];
+  }
+
+  /* --- Buttons ------------------------------------------------------------ */
+
+  /* Every button variant shares the same MD3 shape, 48px min tap target, and
+     state-layer scaffolding. Variants below add color + emphasis. The base
+     :focus-visible ring (utilities layer) supplies the keyboard focus
+     indicator — no outline-none here. */
   .btn-filled,
   .btn-tonal,
   .btn-outlined,
   .btn-text {
-    @apply relative isolate inline-flex items-center justify-center gap-2
-      overflow-hidden rounded-full px-6 text-sm font-medium
-      transition-[box-shadow,background-color] duration-200
-      focus-visible:outline-none;
-    min-height: 40px;
+    @apply relative isolate inline-flex min-h-12 items-center justify-center
+      gap-2 overflow-hidden rounded-full px-6 text-sm font-medium
+      transition-[box-shadow,background-color] duration-200;
   }
 
+  /* MD3 state layer: a currentColor wash that intensifies on hover/press. */
   .btn-filled::before,
   .btn-tonal::before,
   .btn-outlined::before,
-  .btn-text::before {
+  .btn-text::before,
+  .icon-btn::before {
     content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: currentColor;
-    opacity: 0;
-    transition: opacity 200ms ease;
+    @apply pointer-events-none absolute inset-0 -z-10 rounded-[inherit]
+      bg-current opacity-0 transition-opacity duration-150;
   }
   .btn-filled:hover::before,
   .btn-tonal:hover::before,
   .btn-outlined:hover::before,
-  .btn-text:hover::before {
-    opacity: 0.08;
+  .btn-text:hover::before,
+  .icon-btn:hover::before {
+    @apply opacity-[0.08];
   }
   .btn-filled:active::before,
   .btn-tonal:active::before,
   .btn-outlined:active::before,
-  .btn-text:active::before {
-    opacity: 0.12;
+  .btn-text:active::before,
+  .icon-btn:active::before {
+    @apply opacity-[0.12];
   }
 
-  /* Filled: primary emphasis. */
+  /* Filled button — primary, highest-emphasis action. */
   .btn-filled {
-    @apply bg-primary text-on-primary;
-  }
-  .btn-filled:hover {
-    box-shadow: var(--shadow-e1);
+    @apply bg-primary text-on-primary shadow-e1 hover:shadow-e2;
   }
 
-  /* Filled-tonal: secondary emphasis on a container surface. */
+  /* Filled-tonal button — medium emphasis on a secondary container tone. */
   .btn-tonal {
-    @apply bg-secondary-container text-on-secondary-container;
-  }
-  .btn-tonal:hover {
-    box-shadow: var(--shadow-e1);
+    @apply bg-secondary-container text-on-secondary-container hover:shadow-e1;
   }
 
-  /* Outlined: low emphasis with an outline stroke. */
+  /* Outlined button — low emphasis, sits directly on the surface. */
   .btn-outlined {
     @apply border border-outline bg-transparent text-primary;
   }
 
-  /* Text: lowest emphasis, tighter padding. */
+  /* Text button — lowest emphasis; tighter padding per MD3. */
   .btn-text {
-    @apply bg-transparent px-3 text-primary;
+    @apply px-4 text-primary;
   }
 
-  /* ---- Icon button (theme toggle, FAB-adjacent) ---------------------- */
+  /* --- Icon button (theme toggle, nav toggle, footer social) ------------- */
   .icon-btn {
-    @apply relative isolate inline-flex items-center justify-center
-      overflow-hidden rounded-full text-on-surface-variant
-      transition-colors focus-visible:outline-none;
-    height: 48px;
-    width: 48px;
-  }
-  .icon-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: currentColor;
-    opacity: 0;
-    transition: opacity 200ms ease;
-  }
-  .icon-btn:hover::before {
-    opacity: 0.08;
-  }
-  .icon-btn:active::before {
-    opacity: 0.12;
+    @apply relative isolate inline-flex h-12 w-12 items-center justify-center
+      overflow-hidden rounded-full text-on-surface-variant transition-colors;
   }
 
-  /* ---- Cards ---------------------------------------------------------- */
+  /* --- Cards -------------------------------------------------------------- */
 
-  /* Elevated card: tonal low-container surface + MD3 elevation. */
-  .card-elevated {
-    @apply flex flex-col rounded-lg bg-surface-container-low p-6
-      transition-shadow duration-200;
-    box-shadow: var(--shadow-e1);
-  }
-  .card-elevated:hover {
-    box-shadow: var(--shadow-e3);
-  }
-
-  /* Outlined card: outline-variant stroke, no shadow. */
+  /* Outlined card — the calm default for this minimal direction. */
   .card-outlined {
-    @apply flex flex-col rounded-lg border border-outline-variant
-      bg-surface p-6;
+    @apply rounded-lg border border-outline-variant bg-surface p-6
+      transition-colors;
   }
 
-  /* ---- Chips (assist / input) ---------------------------------------- */
+  /* Elevated card — surface-container-low + e1; lifts on hover. */
+  .card-elevated {
+    @apply rounded-lg bg-surface-container-low p-6 shadow-e1 transition-shadow
+      hover:shadow-e2;
+  }
+
+  /* --- Chips (skill + project tags) -------------------------------------- */
   .chip {
-    @apply inline-flex items-center rounded-sm border border-outline-variant
-      bg-surface-container-high px-3 py-1.5 text-xs font-medium
-      text-on-surface-variant;
-    min-height: 32px;
+    @apply inline-flex min-h-8 max-w-full items-center rounded-sm border
+      border-outline-variant bg-surface px-3 py-1 text-xs font-medium
+      break-words text-on-surface-variant;
   }
 
-  /* Tonal chip variant used inside tinted (primary-container) sections. */
-  .chip-tonal {
-    @apply inline-flex items-center rounded-sm bg-secondary-container
-      px-3 py-1.5 text-xs font-medium text-on-secondary-container;
-    min-height: 32px;
-  }
+  /* --- Section typography ------------------------------------------------- */
 
-  /* ---- Text helpers --------------------------------------------------- */
-
-  /* Eyebrow label above section headings. */
+  /* Monospace eyebrow/label above section headings. */
   .eyebrow {
-    @apply mb-3 inline-flex items-center gap-2 font-mono text-xs font-semibold
+    @apply mb-3 inline-flex items-center gap-2 font-mono text-xs font-medium
       uppercase tracking-[0.18em] text-primary;
   }
 
-  /* Section heading. */
+  /* Section heading (MD3 headline). */
   .section-title {
-    @apply text-3xl font-semibold tracking-tight text-on-surface sm:text-4xl;
-    letter-spacing: -0.01em;
+    @apply text-3xl font-normal tracking-tight text-on-surface sm:text-4xl;
   }
 
-  /* Inline underlined text link. */
-  .link-underline {
-    @apply font-medium text-primary underline decoration-outline-variant
-      underline-offset-4 transition-colors hover:decoration-current
-      focus-visible:outline-none;
-  }
-
-  /* Top app-bar navigation link with an MD3 state layer on hover. */
-  .nav-link {
-    @apply relative isolate overflow-hidden rounded-full px-3 py-2 text-sm
-      font-medium text-on-surface-variant transition-colors
-      hover:text-on-surface focus-visible:outline-none;
-  }
-  .nav-link::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: currentColor;
-    opacity: 0;
-    transition: opacity 200ms ease;
-    border-radius: inherit;
-  }
-  .nav-link:hover::before {
-    opacity: 0.08;
+  /* --- Inline text link --------------------------------------------------- */
+  /* No outline-none — relies on the base :focus-visible ring. */
+  .link-inline {
+    @apply inline-flex items-center gap-1 font-medium text-primary underline
+      decoration-outline-variant underline-offset-4 transition-colors
+      hover:decoration-primary;
   }
 }

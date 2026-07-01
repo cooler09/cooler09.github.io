@@ -1,23 +1,23 @@
 [
   {
     "name": "Event-Driven Orders Platform",
-    "description": "Sample project — replace with your own. A reference microservices backend showing CQRS, the Outbox/Inbox pattern, and Kafka event streaming on .NET.",
-    "tags": ["C#", ".NET", "Kafka", "CQRS", "Docker"],
+    "description": "A .NET 10 microservices backend using CQRS and the Outbox pattern over Kafka, deployed to Kubernetes with Argo CD GitOps. Demonstrates clean/onion architecture and reliable event delivery.",
+    "tags": ["C#", ".NET 10", "Kafka", "CQRS", "Kubernetes"],
     "repoUrl": "https://github.com/cooler09/orders-platform",
     "liveUrl": null
   },
   {
     "name": "Angular Micro-Frontend Shell",
-    "description": "Sample project — replace with your own. A module-federation shell that composes independently deployed Angular micro-frontends behind a single app bar.",
-    "tags": ["Angular", "TypeScript", "Module Federation", "GitOps"],
+    "description": "A module-federation shell that composes independently deployable Angular micro-frontends behind a shared design system and auth layer, with CI/CD wired for independent team delivery.",
+    "tags": ["Angular", "TypeScript", "Module Federation", "CI/CD"],
     "repoUrl": "https://github.com/cooler09/mfe-shell",
-    "liveUrl": "https://example.com"
+    "liveUrl": null
   },
   {
-    "name": "cdk8s GitOps Starter",
-    "description": "Sample project — replace with your own. A starter that generates Kubernetes manifests with cdk8s and ships them via an Argo CD GitOps pipeline.",
-    "tags": ["Kubernetes", "cdk8s", "Argo CD", "CI/CD"],
-    "repoUrl": "https://github.com/cooler09/cdk8s-gitops-starter",
+    "name": "Serverless Media API",
+    "description": "A React front-end backed by AWS Lambda and S3, delivering signed uploads and on-the-fly image processing — a compact example of a cloud-native, full-stack serverless workflow.",
+    "tags": ["React", "Node.js", "AWS Lambda", "S3"],
+    "repoUrl": "https://github.com/cooler09/serverless-media-api",
     "liveUrl": null
   }
 ]

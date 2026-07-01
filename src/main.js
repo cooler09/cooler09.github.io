@@ -3,29 +3,34 @@ import './style.css'
 /* ===========================================================================
    Zachary Lockhart — portfolio behavior.
 
-   Two responsibilities:
-     1. Theme toggle (light / dark) with persistence and correct ARIA + meta.
-     2. Data-driven project cards fetched from data/projects.json.
+   Responsibilities:
+     1. Class-based dark-mode toggle (persisted; a11y-labelled).
+     2. <meta name="theme-color"> kept in sync with the active MD3 surface.
+     3. Mobile navigation menu (toggle, Escape-to-close, focus management).
+     4. Data-driven project cards fetched from data/projects.json.
+     5. Footer year.
+
+   The FOUC-prevention script in index.html already sets the initial `.dark`
+   class before first paint; this module only syncs accessory state and wires
+   interactivity. Every selector referenced here exists verbatim in index.html.
    =========================================================================== */
+
+/** Material surface colors, mirrored from style.css for the theme-color meta. */
+const SURFACE = { light: '#f9f9ff', dark: '#111318' }
 
 /* ---------------------------------------------------------------------------
    Theme toggle
    --------------------------------------------------------------------------- */
-
-// Surface colors per theme, mirrored from --md-surface so the browser chrome
-// (address bar / status bar) matches the page. Keep these in sync with CSS.
-const THEME_COLOR = { light: '#f9f9ff', dark: '#111318' }
-
 const root = document.documentElement
 const toggle = document.getElementById('theme-toggle')
+/* Select by attribute so the reference survives any HTML minification. */
 const themeColorMeta = document.querySelector('meta[name="theme-color"]')
 
 /**
- * Reflect the current theme onto the toggle button (ARIA) and the theme-color
- * meta tag. The `.dark` class is the single source of truth and is set before
- * first paint by the inline script in index.html.
+ * Reflect the current theme onto the toggle's ARIA state + label and the
+ * browser theme-color. The `.dark` class is the single source of truth.
  */
-function syncThemeUi() {
+function syncThemeState() {
   const isDark = root.classList.contains('dark')
   if (toggle) {
     toggle.setAttribute('aria-pressed', String(isDark))
@@ -35,37 +40,70 @@ function syncThemeUi() {
     )
   }
   if (themeColorMeta) {
-    themeColorMeta.setAttribute('content', isDark ? THEME_COLOR.dark : THEME_COLOR.light)
+    themeColorMeta.setAttribute('content', isDark ? SURFACE.dark : SURFACE.light)
   }
 }
 
-if (toggle) {
-  toggle.addEventListener('click', () => {
-    const isDark = root.classList.toggle('dark')
-    try {
-      localStorage.setItem('theme', isDark ? 'dark' : 'light')
-    } catch {
-      /* Persistence is best-effort; ignore private-mode failures. */
-    }
-    syncThemeUi()
-  })
-}
-
-// Follow the OS theme while the user hasn't made an explicit choice.
-const media = window.matchMedia('(prefers-color-scheme: dark)')
-media.addEventListener('change', (event) => {
-  let stored = null
+toggle?.addEventListener('click', () => {
+  const isDark = root.classList.toggle('dark')
   try {
-    stored = localStorage.getItem('theme')
+    localStorage.setItem('theme', isDark ? 'dark' : 'light')
   } catch {
-    /* ignore */
+    /* Persistence is best-effort; ignore private-mode failures. */
   }
-  if (stored) return // respect an explicit user preference
-  root.classList.toggle('dark', event.matches)
-  syncThemeUi()
+  syncThemeState()
 })
 
-syncThemeUi()
+// Follow the OS preference while the user hasn't made an explicit choice.
+window
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', (event) => {
+    let stored = null
+    try {
+      stored = localStorage.getItem('theme')
+    } catch {
+      /* ignore */
+    }
+    if (stored) return // An explicit choice wins over the OS setting.
+    root.classList.toggle('dark', event.matches)
+    syncThemeState()
+  })
+
+syncThemeState()
+
+/* ---------------------------------------------------------------------------
+   Mobile navigation menu
+   --------------------------------------------------------------------------- */
+const navToggle = document.getElementById('nav-toggle')
+const mobileMenu = document.getElementById('mobile-menu')
+
+/** Open/close the mobile menu and keep ARIA state in sync. */
+function setMenu(open) {
+  if (!navToggle || !mobileMenu) return
+  navToggle.setAttribute('aria-expanded', String(open))
+  mobileMenu.hidden = !open
+}
+
+navToggle?.addEventListener('click', () => {
+  const open = navToggle.getAttribute('aria-expanded') === 'true'
+  setMenu(!open)
+})
+
+// Close the menu after activating any of its links.
+mobileMenu?.addEventListener('click', (event) => {
+  if (event.target.closest('a')) setMenu(false)
+})
+
+// Escape closes the menu and returns focus to the toggle.
+document.addEventListener('keydown', (event) => {
+  if (
+    event.key === 'Escape' &&
+    navToggle?.getAttribute('aria-expanded') === 'true'
+  ) {
+    setMenu(false)
+    navToggle.focus()
+  }
+})
 
 /* ---------------------------------------------------------------------------
    Footer year
@@ -75,12 +113,11 @@ if (yearEl) yearEl.textContent = String(new Date().getFullYear())
 
 /* ---------------------------------------------------------------------------
    Projects — fetched from data/projects.json and rendered as Material cards.
+   Built with DOM APIs (not innerHTML) so user-editable JSON can't inject markup.
    --------------------------------------------------------------------------- */
-
 const grid = document.getElementById('projects-grid')
-const status = document.getElementById('projects-status')
 
-/** Small helper: create an element with optional class and text. */
+/** Create an element with optional class names and text content. */
 function el(tag, className, text) {
   const node = document.createElement(tag)
   if (className) node.className = className
@@ -88,89 +125,103 @@ function el(tag, className, text) {
   return node
 }
 
-/** Inline SVG for the "external link" affordance on card links. */
+/** Small inline "open in new tab" arrow icon, matching the markup elsewhere. */
 function externalIcon() {
   const NS = 'http://www.w3.org/2000/svg'
   const svg = document.createElementNS(NS, 'svg')
+  svg.setAttribute('class', 'h-4 w-4')
   svg.setAttribute('viewBox', '0 0 24 24')
   svg.setAttribute('fill', 'none')
   svg.setAttribute('stroke', 'currentColor')
   svg.setAttribute('stroke-width', '1.75')
   svg.setAttribute('stroke-linecap', 'round')
   svg.setAttribute('stroke-linejoin', 'round')
-  svg.setAttribute('class', 'h-4 w-4')
   svg.setAttribute('aria-hidden', 'true')
-  const p1 = document.createElementNS(NS, 'path')
-  p1.setAttribute('d', 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6')
-  const p2 = document.createElementNS(NS, 'path')
-  p2.setAttribute('d', 'M15 3h6v6m-11 5L21 3')
-  svg.append(p1, p2)
+  const path = document.createElementNS(NS, 'path')
+  path.setAttribute('d', 'M7 17 17 7M9 7h8v8')
+  svg.appendChild(path)
   return svg
 }
 
-/** Build one Material elevated card for a project. */
-function renderProject(project) {
-  const card = el('article', 'card-elevated')
+/** Build one Material elevated card for a project entry. */
+function renderProjectCard(project) {
+  const card = el('article', 'card-elevated flex h-full flex-col')
 
-  card.append(el('h3', 'text-lg font-semibold text-on-surface', project.name))
-  card.append(
+  card.appendChild(
     el(
-      'p',
-      'mt-2 flex-1 text-sm leading-relaxed text-on-surface-variant',
-      project.description,
+      'h3',
+      'text-lg font-medium text-on-surface',
+      project.name || 'Untitled project',
     ),
   )
 
-  // Tags as MD3 chips.
-  if (Array.isArray(project.tags) && project.tags.length) {
-    const tags = el('ul', 'mt-4 flex flex-wrap gap-2')
-    tags.setAttribute('aria-label', 'Technologies')
-    for (const tag of project.tags) tags.append(el('li', 'chip', tag))
-    card.append(tags)
+  if (project.description) {
+    card.appendChild(
+      el(
+        'p',
+        'mt-2 flex-1 text-sm leading-relaxed text-on-surface-variant',
+        project.description,
+      ),
+    )
   }
 
-  // Links: repo always, live only when truthy.
-  const links = el('div', 'mt-5 flex flex-wrap items-center gap-4')
+  // Tags → Material assist chips.
+  if (Array.isArray(project.tags) && project.tags.length) {
+    const tagList = el('ul', 'mt-4 flex flex-wrap gap-2')
+    tagList.setAttribute(
+      'aria-label',
+      `${project.name || 'Project'} technologies`,
+    )
+    for (const tag of project.tags) tagList.appendChild(el('li', 'chip', tag))
+    card.appendChild(tagList)
+  }
+
+  // Links row: repo (when present) + live (only when truthy).
+  const links = el(
+    'div',
+    'mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-outline-variant pt-4 text-sm',
+  )
 
   if (project.repoUrl) {
-    const repo = el(
-      'a',
-      'link-underline inline-flex items-center gap-1.5 text-sm',
-      'Code',
-    )
+    const repo = el('a', 'link-inline', 'Code')
     repo.href = project.repoUrl
     repo.target = '_blank'
     repo.rel = 'noopener noreferrer'
-    repo.setAttribute('aria-label', `${project.name} source code on GitHub`)
-    repo.append(externalIcon())
-    links.append(repo)
+    repo.setAttribute(
+      'aria-label',
+      `${project.name || 'Project'} source code on GitHub`,
+    )
+    repo.appendChild(externalIcon())
+    links.appendChild(repo)
   }
 
   if (project.liveUrl) {
-    const live = el(
-      'a',
-      'link-underline inline-flex items-center gap-1.5 text-sm',
-      'Live',
-    )
+    const live = el('a', 'link-inline', 'Live')
     live.href = project.liveUrl
     live.target = '_blank'
     live.rel = 'noopener noreferrer'
-    live.setAttribute('aria-label', `${project.name} live site`)
-    live.append(externalIcon())
-    links.append(live)
+    live.setAttribute('aria-label', `${project.name || 'Project'} live site`)
+    live.appendChild(externalIcon())
+    links.appendChild(live)
   }
 
-  if (links.childElementCount) card.append(links)
+  if (links.childElementCount) card.appendChild(links)
+
   return card
 }
 
 /** Replace the grid contents with a single status message. */
-function showStatus(message) {
-  grid.replaceChildren(el('p', 'text-on-surface-variant', message))
+function setStatus(message) {
+  grid.replaceChildren(
+    el('p', 'col-span-full font-mono text-sm text-on-surface-variant', message),
+  )
 }
 
 async function loadProjects() {
   if (!grid) return
+
+  grid.setAttribute('aria-busy', 'true')
+  setStatus('Loading projects…')
 
   try {
     const response = await fetch(`${import.meta.env.BASE_URL}data/projects.json`)
@@ -179,17 +230,21 @@ async function loadProjects() {
     const projects = await response.json()
 
     if (!Array.isArray(projects) || projects.length === 0) {
-      showStatus('No projects to show yet — check back soon.')
+      setStatus('No projects to show yet — browse my work on GitHub.')
       return
     }
 
     const fragment = document.createDocumentFragment()
-    for (const project of projects) fragment.append(renderProject(project))
+    for (const project of projects)
+      fragment.appendChild(renderProjectCard(project))
     grid.replaceChildren(fragment)
   } catch (error) {
     console.error('Failed to load projects:', error)
-    showStatus('Sorry — projects could not be loaded right now.')
+    setStatus(
+      'Projects could not be loaded right now — browse my work on GitHub.',
+    )
   } finally {
+    // Reset on every path so the live region is never left perpetually busy.
     grid.setAttribute('aria-busy', 'false')
   }
 }
