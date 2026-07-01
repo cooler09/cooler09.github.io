@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Sample Project One",
+    "description": "Replace this with a real project. One or two sentences on what it does and the problem it solves.",
+    "tags": ["React", "Node.js", "PostgreSQL"],
+    "repoUrl": "https://github.com/cooler09/sample-project-one",
+    "liveUrl": "https://example.com"
+  },
+  {
+    "name": "Sample Project Two",
+    "description": "Another placeholder. Highlight the impact or an interesting technical challenge you solved.",
+    "tags": ["TypeScript", "Express", "Docker"],
+    "repoUrl": "https://github.com/cooler09/sample-project-two",
+    "liveUrl": null
+  },
+  {
+    "name": "Sample Project Three",
+    "description": "A third placeholder. Keep descriptions short and outcome-focused for skim-readers.",
+    "tags": ["Next.js", "Tailwind CSS", "Prisma"],
+    "repoUrl": "https://github.com/cooler09/sample-project-three",
+    "liveUrl": null
+  }
+]

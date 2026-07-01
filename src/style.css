@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: main.js toggles `.dark` on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Placeholder theme — the design workflow replaces this with the real tokens. */
+@theme {
+  --color-accent: #2563eb;
+}
