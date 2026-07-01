@@ -195,8 +195,13 @@
 @layer components {
   /* ---- Buttons -------------------------------------------------------- */
 
-  /* Shared button geometry + MD3 state-layer scaffold. */
-  .btn {
+  /* Shared button geometry + MD3 state-layer scaffold. All variants share
+     this base; the state layer is an on-color overlay (currentColor) that
+     fades to ~8% on hover and ~12% on press. */
+  .btn-filled,
+  .btn-tonal,
+  .btn-outlined,
+  .btn-text {
     @apply relative isolate inline-flex items-center justify-center gap-2
       overflow-hidden rounded-full px-6 text-sm font-medium
       transition-[box-shadow,background-color] duration-200
@@ -204,8 +209,10 @@
     min-height: 40px;
   }
 
-  /* State layer: an on-color overlay that intensifies on hover / press. */
-  .btn::before {
+  .btn-filled::before,
+  .btn-tonal::before,
+  .btn-outlined::before,
+  .btn-text::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -214,16 +221,22 @@
     opacity: 0;
     transition: opacity 200ms ease;
   }
-  .btn:hover::before {
+  .btn-filled:hover::before,
+  .btn-tonal:hover::before,
+  .btn-outlined:hover::before,
+  .btn-text:hover::before {
     opacity: 0.08;
   }
-  .btn:active::before {
+  .btn-filled:active::before,
+  .btn-tonal:active::before,
+  .btn-outlined:active::before,
+  .btn-text:active::before {
     opacity: 0.12;
   }
 
   /* Filled: primary emphasis. */
   .btn-filled {
-    @apply btn bg-primary text-on-primary;
+    @apply bg-primary text-on-primary;
   }
   .btn-filled:hover {
     box-shadow: var(--shadow-e1);
@@ -231,7 +244,7 @@
 
   /* Filled-tonal: secondary emphasis on a container surface. */
   .btn-tonal {
-    @apply btn bg-secondary-container text-on-secondary-container;
+    @apply bg-secondary-container text-on-secondary-container;
   }
   .btn-tonal:hover {
     box-shadow: var(--shadow-e1);
@@ -239,12 +252,12 @@
 
   /* Outlined: low emphasis with an outline stroke. */
   .btn-outlined {
-    @apply btn border border-outline text-primary bg-transparent;
+    @apply border border-outline bg-transparent text-primary;
   }
 
   /* Text: lowest emphasis, tighter padding. */
   .btn-text {
-    @apply btn px-3 text-primary bg-transparent;
+    @apply bg-transparent px-3 text-primary;
   }
 
   /* ---- Icon button (theme toggle, FAB-adjacent) ---------------------- */
