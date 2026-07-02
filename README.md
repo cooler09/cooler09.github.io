@@ -51,7 +51,6 @@ Most updates don't require touching component code:
   | `repoUrl` | Link to source repo |
   | `liveUrl` | Link to live demo |
 
-- **LinkedIn** — replace the `{{LINKEDIN_URL}}` placeholder in `src/index.html`.
 - **Résumé** — swap `src/public/resume.pdf` (keep the filename to preserve the `/resume.pdf` link).
 - **Palette / theme** — the MD3 color roles and design tokens live in `src/style.css`.
 

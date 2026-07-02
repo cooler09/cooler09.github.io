@@ -81,5 +81,5 @@ I also run **Zachary Lockhart Consulting, LLC**, delivering full-stack solutions
 
 - 🖥️ Portfolio: [cooler09.github.io](https://cooler09.github.io)
 - 📫 Email: [zacharyjordan82@gmail.com](mailto:zacharyjordan82@gmail.com)
-- 💼 LinkedIn: [LinkedIn]({{LINKEDIN_URL}})
+- 💼 LinkedIn: [zachary-lockhart](https://www.linkedin.com/in/zachary-lockhart-40007233)
 - 🐙 GitHub: [@cooler09](https://github.com/cooler09)
