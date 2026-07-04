@@ -1,23 +1,9 @@
 [
   {
-    "name": "Event-Driven Orders Platform",
-    "description": "A .NET 10 microservices backend using CQRS and the Outbox pattern over Kafka, deployed to Kubernetes with Argo CD GitOps. Demonstrates clean/onion architecture and reliable event delivery.",
-    "tags": ["C#", ".NET 10", "Kafka", "CQRS", "Kubernetes"],
-    "repoUrl": "https://github.com/cooler09/orders-platform",
-    "liveUrl": null
-  },
-  {
-    "name": "Angular Micro-Frontend Shell",
-    "description": "A module-federation shell that composes independently deployable Angular micro-frontends behind a shared design system and auth layer, with CI/CD wired for independent team delivery.",
-    "tags": ["Angular", "TypeScript", "Module Federation", "CI/CD"],
-    "repoUrl": "https://github.com/cooler09/mfe-shell",
-    "liveUrl": null
-  },
-  {
-    "name": "Serverless Media API",
-    "description": "A React front-end backed by AWS Lambda and S3, delivering signed uploads and on-the-fly image processing — a compact example of a cloud-native, full-stack serverless workflow.",
-    "tags": ["React", "Node.js", "AWS Lambda", "S3"],
-    "repoUrl": "https://github.com/cooler09/serverless-media-api",
-    "liveUrl": null
+    "name": "PickupVB — Volleyball Events Platform",
+    "description": "A full-stack platform to find, host, and run volleyball events — indoor, grass, and beach — with real-time spot updates and host tools for brackets, seeding, and scoring. Built as a Turborepo monorepo with a hand-rolled DDD/CQRS domain layer (hexagonal architecture) shared across Next.js 16 Route Handlers, on Supabase (Postgres + PostGIS + Realtime).",
+    "tags": ["Next.js 16", "React 19", "TypeScript", "Supabase", "DDD/CQRS"],
+    "repoUrl": "https://github.com/cooler09/pickupvb.com",
+    "liveUrl": "https://pickupvb.com"
   }
 ]
