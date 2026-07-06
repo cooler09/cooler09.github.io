@@ -5,5 +5,19 @@
     "tags": ["Next.js 16", "React 19", "TypeScript", "Supabase", "DDD/CQRS"],
     "repoUrl": "https://github.com/cooler09/pickupvb.com",
     "liveUrl": "https://pickupvb.com"
+  },
+  {
+    "name": "Corgi Casinos",
+    "description": "A fake-money over/under betting game for family and friends — post an event with a line, everyone bets OVER or UNDER, then settle it with the real result to pay out coins and update the leaderboard. Next.js 16 + React 19 with Server Actions over a pure, unit-tested domain layer (settlement plus fixed-odds and pari-mutuel payouts) on Supabase Postgres.",
+    "tags": ["Next.js 16", "React 19", "TypeScript", "Server Actions", "Supabase"],
+    "repoUrl": "https://github.com/cooler09/corgi-casinos",
+    "liveUrl": null
+  },
+  {
+    "name": "Finnever — AI-Native Real-Estate Marketplace",
+    "description": "A polyglot, event-driven monorepo modeling a modern proptech stack end-to-end: a Next.js RSC public portal, a SvelteKit agent dashboard, and an Expo mobile app over a Hono API, backed by Postgres/PostGIS (OLTP) and ClickHouse (OLAP) with a Python/FastAPI ML service and Claude-powered features. A single shared zod contract keeps every surface end-to-end typed and spec-driven.",
+    "tags": ["Next.js", "SvelteKit", "Hono", "ClickHouse", "Event-Driven"],
+    "repoUrl": "https://github.com/cooler09/portfolio-finnever",
+    "liveUrl": null
   }
 ]
